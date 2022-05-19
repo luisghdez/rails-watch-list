@@ -1,4 +1,3 @@
-import "bootstrap";
 
 require_relative "boot"
 

@@ -1,0 +1,18 @@
+<br>
+<h2><%= @list.name %></h2>
+<%# <h2>Bookmarks</h2> %>
+<div class='d-flex'>
+  <% @bookmarks.each do |b| %>
+  <div class="card grow" style="width: 18rem;">
+    <img class="card-img-top" src=<%= b.movie.poster_url %> alt="Card image cap">
+    <div class="card-body">
+      <h4><%= b.movie.title %></h4>
+      <p class="card-text"><%= b.movie.overview %></p>
+      <p><%= link_to 'remove', bookmark_path(b), method: :delete %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
+<br><br>
+<%= link_to 'add movie', new_list_bookmark_path(@list) %>
+<%= link_to 'go back', lists_path %>
