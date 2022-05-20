@@ -1,13 +1,17 @@
-<div class="row">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpapercave.com/wp/wp10615937.jpg);height: 65vh;background-size: contain;">
+  Your favorite movies all in one place
+</div>
+
+<div class="cards">
   <% @lists.each do |l| %>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= l.name %></h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <%= link_to 'go', list_path(l) %>
+    <%= link_to list_path(l) do %>
+      <div class="col-sm-6">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaper.dog/large/20487234.jpg)">
+            <h5 class="card-title"><%= l.name %></h5>
+        </div>
       </div>
-    </div>
-  </div>
+    <% end %>
   <% end %>
 </div>
+
+<%= link_to 'add new list', new_list_path %>
